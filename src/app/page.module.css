@@ -1,0 +1,11 @@
+.container {
+    width: 100dvw;
+    height: 100dvh;
+    background: #F9FAFB;
+    background: linear-gradient(205deg, #F9FAFB 40%, #7EE7FC 80%, #09AACD80 100%);
+}
+
+:global(.dark) .container {
+    background: #101828;
+    background: linear-gradient(205deg, #101828 40%, #002E62 80%, #00449380 100%);
+}
