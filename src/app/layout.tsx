@@ -1,8 +1,8 @@
 import type { Metadata } from "next";
 import "./globals.css";
 import {ReactNode} from "react";
-
-
+import {Providers} from "@/app/providers";
+import {ThemeSwitcher} from "@/components/theme-switcher/ThemeSwitcher";
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -17,7 +17,12 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body>
-        {children}
+      <Providers>
+          <div className='flex justify-end'>
+              <ThemeSwitcher/>
+          </div>
+          {children}
+      </Providers>
       </body>
     </html>
   );
