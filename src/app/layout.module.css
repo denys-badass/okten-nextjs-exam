@@ -1,0 +1,9 @@
+.screen {
+    min-height: 100dvh;
+    background: linear-gradient(135deg, #f8fafc 0%, #ffffff 50%, #f1f5f9 100%);
+    transition: all 300ms ease-in-out;
+}
+
+:global(.dark) .screen {
+    background: linear-gradient(135deg, #0f172a 0%, #1e293b 50%, #0f172a 100%);
+}

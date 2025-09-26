@@ -1,0 +1,16 @@
+.welcome {
+    height: 4rem;
+    width: auto;
+    margin: 0 auto;
+}
+
+.header {
+    height: 2rem;
+    width: auto;
+}
+
+@media (min-width: 640px) {
+    .welcome {
+        height: 5rem;
+    }
+}

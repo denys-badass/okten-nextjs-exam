@@ -1,5 +1,4 @@
 import {createStore} from "zustand/vanilla";
-import {persist} from "zustand/middleware/persist";
 
 type ThemeState = {
     theme: 'light' | 'dark';

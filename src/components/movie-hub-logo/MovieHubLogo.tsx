@@ -1,10 +1,18 @@
-interface MovieHubLogoProps {
-    className?: string;
+import styles from "./MovieHubLogo.module.css";
+import clsx from "clsx";
+
+interface Props {
+    className : string;
 }
 
-const MovieHubLogo = ({ className = "h-8 w-auto" }: MovieHubLogoProps) => (
+const MovieHubLogo = ( {className} :  Props) => (
     <svg
-        className={className}
+        className={clsx(
+            {
+                [styles.welcome] : className === 'welcome',
+                [styles.header] : className === 'header',
+            },
+        )}
         viewBox="0 0 200 60"
         fill="none"
         xmlns="http://www.w3.org/2000/svg"
