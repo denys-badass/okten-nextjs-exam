@@ -16,19 +16,13 @@ const defaultThemeState: ThemeState = {
 };
 
 export const createThemeStore = (initState: ThemeState = defaultThemeState) => {
-    return createStore<ThemeStore>()(
-        persist(
-            (set) => ({
-                ...initState,
-                toggleTheme: () => {
-                    set((state) => ({
-                        theme: state.theme === 'light' ? 'dark' : 'light'
-                    }));
-                },
-            }),
-            {
-                name: 'theme-storage',
-            }
-        )
+    return createStore<ThemeStore>()((set) => ({
+            ...initState,
+            toggleTheme: () => {
+                set((state) => ({
+                    theme: state.theme === 'light' ? 'dark' : 'light'
+                }));
+            },
+        }),
     )
 }
