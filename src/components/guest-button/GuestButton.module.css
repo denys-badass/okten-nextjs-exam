@@ -13,14 +13,7 @@
 }
 
 .button:hover {
-    border: 2px solid var(--color-amber-400, #fbbf24);
     transform: translateY(-0.125rem);
-    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -4px rgba(0, 0, 0, 0.1);
-}
-
-.button:focus {
-    outline: none;
-    box-shadow: 0 0 0 2px #47556980;
 }
 
 @media (min-width: 640px) {
