@@ -8,11 +8,11 @@ type ThemeStoreApi = ReturnType<typeof createThemeStore>
 
 export const ThemeStoreContext = createContext<ThemeStoreApi | undefined>(undefined)
 
-type ThemeStoreProviderProps = {
+type Props = {
     children: ReactNode
 }
 
-export const ThemeStoreProvider = ({children}: ThemeStoreProviderProps) => {
+export const ThemeStoreProvider = ({children}: Props) => {
     const storeRef = useRef<ThemeStoreApi | null>(null)
     if (storeRef.current === null) {
         storeRef.current = createThemeStore();

@@ -12,17 +12,17 @@
 }
 
 .container > :not(:last-child) {
-    margin-block-start: 3rem;
-    margin-block-end: 2rem;
+    --tw-space-y-reverse: 0;
+    margin-block-end: 3rem;
 }
 
 .welcome > :not(:last-child) {
-    margin-block-start: 1.5rem;
-    margin-block-end: 1.5rem;
+    --tw-space-y-reverse: 0;
+    margin-block-end: 2rem;
 }
 
 .headingWrapper > :not(:last-child) {
-    margin-block-start: 1rem;
+    --tw-space-y-reverse: 0;
     margin-block-end: 1rem;
 }
 
@@ -71,14 +71,7 @@
 }
 
 .loginButton:hover {
-    background-image: linear-gradient(to right, var(--color-amber-600, #d97706), var(--color-red-600, #dc2626));
     transform: translateY(-0.125rem);
-    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 8px 10px -6px rgba(0, 0, 0, 0.04);
-}
-
-.loginButton:focus {
-    outline: none;
-    box-shadow: 0 0 0 2px #f59e0bcc;
 }
 
 .about {

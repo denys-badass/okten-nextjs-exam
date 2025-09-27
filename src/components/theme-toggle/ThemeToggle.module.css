@@ -1,0 +1,33 @@
+.toggler {
+    padding: 0.5rem;
+    border: none;
+    outline: none;
+    border-radius: 0.5rem;
+    background-color: var(--color-slate-100, #f1f5f9);
+    transition: all 200ms ease-in-out;
+    cursor: pointer;
+}
+
+.toggler:hover {
+    background-color: var(--color-slate-200, #e2e8f0);
+}
+
+.sunIcon {
+    width: 1.25rem;
+    height: 1.25rem;
+    color: var(--color-amber-500, #f59e0b);
+}
+
+.moonIcon {
+    width: 1.25rem;
+    height: 1.25rem;
+    color: var(--color-slate-600, #475569);
+}
+
+:global(.dark) .toggler {
+    background-color: var(--color-slate-800, #1e293b);
+}
+
+:global(.dark) .toggler:hover {
+    background-color: var(--color-slate-700, #334155);
+}

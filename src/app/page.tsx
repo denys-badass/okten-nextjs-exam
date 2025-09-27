@@ -2,6 +2,7 @@ import MovieHubLogo from "@/components/movie-hub-logo/MovieHubLogo";
 import {GuestButton} from "@/components/guest-button/GuestButton";
 import {About} from "@/components/about/About";
 import styles from "./page.module.css"
+import {Button} from "@heroui/button";
 
 export default function HomePage() {
     return (
@@ -21,9 +22,9 @@ export default function HomePage() {
                     </section>
 
                     <div className={styles.buttonGroup}>
-                        <button className={styles.loginButton}>
+                        <Button size="lg" className={styles.loginButton}>
                             Log In
-                        </button>
+                        </Button>
                         <GuestButton/>
                     </div>
 
