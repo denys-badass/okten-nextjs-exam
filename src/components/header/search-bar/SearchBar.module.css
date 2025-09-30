@@ -1,23 +1,25 @@
 .searchBar {
-    width: 100%;
-    padding-left: 2rem;
-    padding-right: 0.75rem;
-    padding-block: 0.5rem;
-    background-color: var(--color-slate-100, #f1f5f9);
-    border: 1px solid var(--color-slate-200, #e2e8f0);
     color: var(--color-slate-900, #0f172a);
-    border-radius: 0.5rem;
-    transition: all 200ms ease-in-out;
 }
 
-.searchBar::placeholder {
+.searchBarWrapper {
+    background-color: var(--color-slate-100, #f1f5f9);
+    border: 1px solid var(--color-slate-200, #e2e8f0);
+    border-radius: 0.5rem;
+}
+
+.searchBarWrapper::placeholder {
     color: var(--color-slate-500, #64748b);
 }
 
-.searchBar:focus {
+.searchBarWrapper:focus-within {
     outline: none;
     border-color: transparent;
     box-shadow: 0 0 0 2px #f59e0b;
+}
+
+.searchBarWrapper:hover {
+    background-color: var(--color-slate-200, #e2e8f0);
 }
 
 .searchIcon {
@@ -32,7 +34,14 @@
 }
 
 :global(.dark) .searchBar {
+    color: var(--color-slate-100, #f1f5f9);
+}
+
+:global(.dark) .searchBarWrapper {
     background-color: var(--color-slate-800, #1e293b);
     border-color: var(--color-slate-700, #334155);
-    color: var(--color-slate-100, #f1f5f9);
+}
+
+:global(.dark) .searchBarWrapper:hover {
+    background-color: #1e293b80;
 }
