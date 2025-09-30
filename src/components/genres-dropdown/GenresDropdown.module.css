@@ -1,3 +1,13 @@
+.mobileWrapper > :not(:last-child) {
+    --tw-space-y-reverse: 0;
+    margin-block-end: 0.5rem;
+}
+
+.mobileTitle {
+    color: var(--color-slate-900, #0f172a);
+    margin-bottom: 0.75rem;
+}
+
 .buttonWrapper {
     position: relative;
 }
@@ -7,7 +17,7 @@
     align-items: center;
     color: var(--color-slate-700, #334155);
     font-weight: 500;
-    transition: all 200ms ease-in-out;
+    cursor: pointer;
 }
 
 .button > :not(:last-child) {
@@ -34,7 +44,7 @@
     top: 100%;
     left: 0;
     margin-top: 0.5rem;
-    width: 16rem;
+    width: 20rem;
     background-color: var(--color-slate-50, #f8fafc);
     border: 1px solid var(--color-slate-200, #e2e8f0);
     border-radius: 0.75rem;
@@ -56,6 +66,27 @@
     padding-inline: 0.5rem;
 }
 
+
+.genreItem {
+    text-align: left;
+    padding-inline: 0.75rem;
+    padding-block: 0.5rem;
+    border-radius: 0.5rem;
+    color: var(--color-slate-700, #334155);
+    transition: all 200ms ease-in-out;
+    font-size: 0.875rem;
+    font-weight: 500;
+}
+
+.genreItem:hover {
+    background-color: var(--color-amber-50, #fffbeb);
+    color: var(--color-amber-700, #bb4d00);
+}
+
+:global(.dark) .mobileTitle {
+    color: var(--color-slate-100, #f1f5f9);
+}
+
 :global(.dark) .button {
     color: var(--color-slate-200, #e2e8f0);
 }
@@ -67,4 +98,13 @@
 :global(.dark) .dropdownWrapper {
     background-color: var(--color-slate-800, #1e293b);
     border: 1px solid var(--color-slate-700, #334155);
+}
+
+:global(.dark) .genreItem {
+    color: var(--color-slate-200, #e2e8f0);
+}
+
+:global(.dark) .genreItem:hover {
+    background-color: #7b330633;
+    color: var(--color-amber-300, #fcd34d);
 }

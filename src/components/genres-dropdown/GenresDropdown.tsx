@@ -2,36 +2,33 @@
 
 import { ChevronDown } from 'lucide-react'
 import {IGenre} from "@/models/IGenre";
-import styles from "./GenresDropdown.module.css"
 import clsx from "clsx";
 import {GenreLink} from "@/components/genre-link/GenreLink";
 import {useGenresDropdown} from "@/hooks/useGenresDropdown";
+import styles from "./GenresDropdown.module.css"
 
-interface GenresDropdownProps {
+type Props = {
     genres: IGenre[];
     isMobile?: boolean;
 }
 
-const GenresDropdown = ({genres, isMobile = false,}: GenresDropdownProps) => {
+const GenresDropdown = ({genres, isMobile = false,}: Props) => {
     const {isOpen, setIsOpen, dropdownRef} = useGenresDropdown();
 
-    // if (isMobile) {
-    //     return (
-    //         <div className="space-y-2">
-    //             <div className="font-medium text-slate-900 dark:text-slate-100 mb-3">Genres</div>
-    //             <div className="grid grid-cols-2 gap-2">
-    //                 {genres.map((genre) => (
-    //                     <button
-    //                         key={genre.id}
-    //                         className="text-left px-3 py-2 text-slate-700 dark:text-slate-200 hover:bg-slate-100 dark:hover:bg-slate-800 rounded-lg transition-colors duration-200 text-sm"
-    //                     >
-    //                         {genre.name}
-    //                     </button>
-    //                 ))}
-    //             </div>
-    //         </div>
-    //     )
-    // }
+    if (isMobile) {
+        return (
+            <div className={styles.mobileWrapper}>
+                <div className={styles.mobileTitle}>Genres</div>
+                <ul className={styles.genreList}>
+                    {genres.map((genre) => (
+                        <li key={genre.id} className={styles.genreItem}>
+                            <GenreLink genre={genre}/>
+                        </li>
+                    ))}
+                </ul>
+            </div>
+        )
+    }
 
     return (
         <div className={styles.buttonWrapper} ref={dropdownRef}>
@@ -52,11 +49,13 @@ const GenresDropdown = ({genres, isMobile = false,}: GenresDropdownProps) => {
             {isOpen && (
                 <div className={styles.dropdownWrapper}>
                     <div className={styles.dropdownBlock}>
-                        <div className={styles.genreList}>
+                        <ul className={styles.genreList}>
                             {genres.map((genre) => (
-                                <GenreLink genre={genre}/>
+                                <li key={genre.id} className={styles.genreItem}>
+                                    <GenreLink genre={genre}/>
+                                </li>
                             ))}
-                        </div>
+                        </ul>
                     </div>
                 </div>
             )}

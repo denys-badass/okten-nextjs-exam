@@ -1,12 +1,18 @@
 import ThemeToggle from "@/components/theme-toggle/ThemeToggle";
 import MovieHubLogo from "@/components/movie-hub-logo/MovieHubLogo";
 import GenresDropdown from "@/components/genres-dropdown/GenresDropdown";
-import styles from "./Header.module.css"
 import Link from "next/link";
 import {movieService} from "@/api/movie.service";
 import {SearchBar} from "@/components/header/search-bar/SearchBar";
+import {LoginInfo} from "@/components/header/login-info/LoginInfo";
+import MobileMenu from "./mobile-menu/MobileMenu";
+import {getLoginType} from "@/helpers/getLoginType";
+import {getUser} from "@/helpers/getUser";
+import styles from "./Header.module.css"
 
 const Header = async () => {
+    const loginType = await getLoginType();
+    const user = await getUser();
     const genres = await movieService.getGenres();
 
     return (
@@ -19,7 +25,6 @@ const Header = async () => {
                         </Link>
                     </div>
 
-                    {/* Desktop Navigation - Server Component */}
                     <nav className={styles.nav}>
                         <Link href="/movies" className={styles.navLink}>
                             Movies
@@ -27,21 +32,18 @@ const Header = async () => {
                         <GenresDropdown genres={genres} />
                     </nav>
 
-                    {/* Desktop Search - Server Component passes to Client */}
-                    <div className="hidden md:block flex-1 max-w-lg mx-8">
+                    <div className={styles.searchBarContainer}>
                         <SearchBar />
                     </div>
 
-                    {/* Desktop User Info & Theme Toggle */}
-                    <div className="hidden md:flex items-center space-x-4">
-                        {/*<UserInfo />*/}
+                    <div className={styles.desktopRightContainer}>
+                        <LoginInfo user={user} loginType={loginType}/>
                         <ThemeToggle />
                     </div>
 
-                    {/* Mobile menu button + Theme Toggle */}
-                    <div className="md:hidden flex items-center space-x-2">
+                    <div className={styles.mobileRightContainer}>
                         <ThemeToggle />
-                        {/*<MobileMenu user={user} genres={genres} />*/}
+                        <MobileMenu genres={genres} user={user} loginType={loginType}/>
                     </div>
                 </div>
             </div>
@@ -49,4 +51,4 @@ const Header = async () => {
     )
 }
 
-export default Header
+export default Header;

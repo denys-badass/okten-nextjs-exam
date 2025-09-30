@@ -1,6 +1,5 @@
 import { IGenre } from "@/models/IGenre";
 import Link from "next/link";
-import styles from "./GenreLink.module.css";
 
 type Props = {
     genre: IGenre;
@@ -8,7 +7,7 @@ type Props = {
 
 export const GenreLink = ({genre}: Props) => {
     return (
-        <Link href={ {pathname: '/movies', query: {with_genres: genre.id}} } className={styles.link}>
+        <Link href={ {pathname: '/movies', query: {with_genres: genre.id}} } >
             { genre.name }
         </Link>
     );
