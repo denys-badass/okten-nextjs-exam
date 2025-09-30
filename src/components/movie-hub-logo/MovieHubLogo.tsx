@@ -1,7 +1,7 @@
-import styles from "./MovieHubLogo.module.css";
 import clsx from "clsx";
+import styles from "./MovieHubLogo.module.css";
 
-interface Props {
+type Props = {
     className : string;
 }
 
@@ -19,8 +19,8 @@ const MovieHubLogo = ( {className} :  Props) => (
     >
         <defs>
             <linearGradient id="logoGradient" x1="0%" y1="0%" x2="100%" y2="0%">
-                <stop offset="0%" className="text-amber-400 dark:text-amber-300" stopColor="currentColor" />
-                <stop offset="100%" className="text-red-500 dark:text-red-400" stopColor="currentColor" />
+                <stop offset="0%" className={styles.from} stopColor="currentColor" />
+                <stop offset="100%" className={styles.to} stopColor="currentColor" />
             </linearGradient>
         </defs>
         <text
@@ -33,8 +33,8 @@ const MovieHubLogo = ( {className} :  Props) => (
         >
             MovieHub
         </text>
-        <circle cx="180" cy="20" r="8" className="fill-amber-400 dark:fill-amber-300" />
-        <circle cx="180" cy="40" r="6" className="fill-red-500 dark:fill-red-400" opacity="0.7" />
+        <circle cx="190" cy="20" r="8" className={styles.circleFrom} />
+        <circle cx="180" cy="40" r="6" className={styles.circleTo} opacity="0.7" />
     </svg>
 );
 
