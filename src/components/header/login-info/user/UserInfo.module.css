@@ -1,0 +1,26 @@
+.name {
+    color: var(--color-slate-700, #334155);
+}
+
+.wrapper {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    transition: all 200ms ease-in-out;
+    padding: 0.5rem;
+    border-radius: 0.5rem;
+    cursor: pointer;
+}
+
+.wrapper:hover {
+    background-color: var(--color-amber-50, #fffbeb);
+}
+
+:global(.dark) .name {
+    color: var(--color-slate-100, #f1f5f9);
+}
+
+:global(.dark) .wrapper:hover {
+    background-color: #7b330633;
+}

@@ -7,7 +7,6 @@ export default async function LoginPage() {
     return (
             <div className={styles.wrapper}>
                 <div className={styles.container}>
-
                     <div className={styles.header}>
                         <MovieHubLogo className={'welcome'} />
                         <h2 className={styles.heading}>
