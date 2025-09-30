@@ -52,6 +52,6 @@
 }
 
 :global(.dark) .formBlock {
-    background-color: #1e293bcc;
+    background-color: rgb(15, 23, 42);
     border: 1px solid var(--color-slate-700, #334155);
 }

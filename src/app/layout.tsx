@@ -3,10 +3,8 @@ import type {Metadata} from 'next';
 import {Inter} from 'next/font/google'
 import './globals.css'
 import {ReactNode} from "react";
-import {ThemeStoreProvider} from "@/providers/theme-store-provider";
 import Header from "@/components/header/Header";
 import styles from './layout.module.css'
-import {LoginStoreProvider} from "@/providers/login-store-provider";
 import {HeroProvider} from "@/providers/hero-provider";
 
 const inter = Inter({subsets: ['latin']})
@@ -18,19 +16,15 @@ export const metadata: Metadata = {
 
 export default function RootLayout({children,}: { children: ReactNode }) {
     return (
-        <html lang="en" suppressHydrationWarning>
+        <html lang="en" data-scroll-behavior="smooth" suppressHydrationWarning>
         <body className={`${inter.className} antialiased`}>
         <HeroProvider>
-            <ThemeStoreProvider>
-                <LoginStoreProvider>
-                    <div className={styles.screen}>
-                        <Header/>
-                        <main className="relative">
-                            {children}
-                        </main>
-                    </div>
-                </LoginStoreProvider>
-            </ThemeStoreProvider>
+            <div className={styles.screen}>
+                <Header/>
+                <main className={styles.main}>
+                    {children}
+                </main>
+            </div>
         </HeroProvider>
         </body>
         </html>

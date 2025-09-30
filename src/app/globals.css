@@ -1,7 +1,8 @@
 @import "tailwindcss";
 @plugin '../hero.ts';
+
 @source '../../node_modules/@heroui/theme/dist/**/*.{js,ts,jsx,tsx}';
-@custom-variant dark (&:where(.dark, .dark *));
+@custom-variant dark (&:is(.dark *));
 
 @theme {
     --color-slate-50: #f8fafc;
@@ -39,6 +40,6 @@
     --default-transition-duration: 300ms;
 }
 
-html {
-    scroll-behavior: smooth;
+:root.dark {
+    background-color: #0f172a;
 }
