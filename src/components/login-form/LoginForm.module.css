@@ -9,9 +9,28 @@
     margin-block-end: 2rem;
 }
 
-.input > :not(:last-child) {
-    --tw-space-y-reverse: 0;
-    margin-block-end: 0.75rem;
+.input {
+    color: var(--color-slate-900, #0f172a);
+}
+
+.inputWrapper {
+    background-color: var(--color-slate-100, #f1f5f9);
+    border: 1px solid var(--color-slate-200, #e2e8f0);
+    border-radius: 0.5rem;
+}
+
+.inputWrapper:hover {
+    background-color: var(--color-slate-200, #e2e8f0);
+}
+
+.inputWrapper:focus-within {
+    outline: none;
+    border-color: transparent;
+    box-shadow: 0 0 0 2px #f59e0b;
+}
+
+.inputLabel {
+    color: var(--color-slate-900, #0f172a);
 }
 
 .button {
@@ -24,4 +43,27 @@
 
 .button:hover {
     transform: translateY(-0.125rem);
+}
+
+.button:focus {
+    outline: none;
+    box-shadow: 0 0 0 2px #f59e0b;
+}
+
+:global(.dark) .input {
+    color: var(--color-slate-100, #f1f5f9);
+}
+
+:global(.dark) .inputLabel {
+    color: var(--color-slate-100, #f1f5f9);
+}
+
+:global(.dark) .inputWrapper {
+    background-color: var(--color-slate-800, #1e293b);
+    border-color: var(--color-slate-700, #334155);
+    color: var(--color-slate-100, #f1f5f9);
+}
+
+:global(.dark) .inputWrapper:hover {
+    background-color: #1e293b80;
 }

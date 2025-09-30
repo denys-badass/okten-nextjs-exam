@@ -1,14 +1,14 @@
 'use client'
 
 import styles from "./GuestButton.module.css";
-import {useRouter} from "next/navigation";
+import {useLogin} from "@/hooks/useLogin";
 
 export const GuestButton = () => {
-    const router = useRouter();
+    const {loginGuest} = useLogin();
 
     return (
         <>
-            <button className={styles.button} onClick={() => router.push('/movies')}>
+            <button className={styles.button} onClick={() => loginGuest()}>
                 Continue as Guest
             </button>
         </>
