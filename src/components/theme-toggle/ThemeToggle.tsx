@@ -1,16 +1,24 @@
 'use client'
 
 import { Moon, Sun } from 'lucide-react'
-import {useTheme} from "@/hooks/useTheme";
 import {Button} from "@heroui/button";
+import {useEffect, useState} from "react";
+import {useTheme} from "next-themes";
 import styles from "./ThemeToggle.module.css"
 
 const ThemeToggle = () => {
-    const {theme, toggleTheme} = useTheme();
+    const [mounted, setMounted] = useState(false)
+    const { theme, setTheme } = useTheme();
+
+    useEffect(() => {
+        setMounted(true);
+    }, []);
+
+    if (!mounted) return null
 
     return (
         <Button
-            onPress={toggleTheme}
+            onPress={() => setTheme(theme === 'dark' ? 'light' : 'dark')}
             isIconOnly
             className={styles.toggler}
             aria-label={`Switch to ${theme === 'dark' ? 'light' : 'dark'} theme`}
