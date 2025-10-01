@@ -21,7 +21,7 @@ const Header = async () => {
                 <div className={styles.container}>
                     <div className={styles.logo}>
                         <Link href="/">
-                            <MovieHubLogo className={'header'} />
+                            <MovieHubLogo className={"header"} />
                         </Link>
                     </div>
 

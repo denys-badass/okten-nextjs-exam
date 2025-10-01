@@ -6,8 +6,11 @@ const nextConfig: NextConfig = {
 
 module.exports = {
     images: {
-        remotePatterns: [new URL('https://image.tmdb.org/t/p/**')]
-    }
+        remotePatterns: [new URL("https://image.tmdb.org/t/p/**")]
+    },
+    experimental: {
+        optimizePackageImports: ["lucide-react", "react-icons", "framer-motion"]
+    },
 }
 
 export default nextConfig;

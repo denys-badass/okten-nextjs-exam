@@ -44,6 +44,10 @@
     --default-transition-duration: 300ms;
 }
 
+html {
+    scroll-behavior: smooth;
+}
+
 :root.dark {
     background-color: #0f172a;
 }

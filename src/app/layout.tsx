@@ -1,19 +1,18 @@
-import type {Metadata} from 'next';
-
-import {Inter} from 'next/font/google'
-import './globals.css'
+import type {Metadata} from "next";
+import {Inter} from "next/font/google"
 import {ReactNode} from "react";
 import Header from "@/components/header/Header";
-import styles from './layout.module.css'
 import {HeroProvider} from "@/providers/hero-provider";
+import "./globals.css"
+import styles from "./layout.module.css"
 
-const inter = Inter({subsets: ['latin']})
+const inter = Inter({subsets: ["latin"]})
 
 export const metadata: Metadata = {
-    title: 'MovieHub - Discover Your Next Favorite Film',
-    description: 'Explore thousands of movies, browse by genres, and find detailed information about your favorite films.',
+    title: "MovieHub - Discover Your Next Favorite Film",
+    description: "Explore thousands of movies, browse by genres, and find detailed information about your favorite films.",
     icons : {
-        icon: '/icon'
+        icon: "/icon"
     }
 }
 

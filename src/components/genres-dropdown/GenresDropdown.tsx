@@ -1,11 +1,12 @@
 'use client'
 
-import { ChevronDown } from 'lucide-react'
+import {ChevronDown} from "lucide-react"
 import {IGenre} from "@/models/IGenre";
 import clsx from "clsx";
 import {GenreLink} from "@/components/genre-link/GenreLink";
 import {useGenresDropdown} from "@/hooks/useGenresDropdown";
 import styles from "./GenresDropdown.module.css"
+import {GenreList} from "@/components/genres-dropdown/genre-list/GenreList";
 
 type Props = {
     genres: IGenre[];
@@ -19,13 +20,7 @@ const GenresDropdown = ({genres, isMobile = false,}: Props) => {
         return (
             <div className={styles.mobileWrapper}>
                 <div className={styles.mobileTitle}>Genres</div>
-                <ul className={styles.genreList}>
-                    {genres.map((genre) => (
-                        <li key={genre.id} className={styles.genreItem}>
-                            <GenreLink genre={genre}/>
-                        </li>
-                    ))}
-                </ul>
+                <GenreList genres={genres}/>
             </div>
         )
     }
@@ -41,7 +36,7 @@ const GenresDropdown = ({genres, isMobile = false,}: Props) => {
                 <ChevronDown
                     className={clsx(
                         [styles.chevron],
-                        {[styles.open] : isOpen}
+                        {[styles.open]: isOpen}
                     )}
                 />
             </button>
@@ -49,13 +44,7 @@ const GenresDropdown = ({genres, isMobile = false,}: Props) => {
             {isOpen && (
                 <div className={styles.dropdownWrapper}>
                     <div className={styles.dropdownBlock}>
-                        <ul className={styles.genreList}>
-                            {genres.map((genre) => (
-                                <li key={genre.id} className={styles.genreItem}>
-                                    <GenreLink genre={genre}/>
-                                </li>
-                            ))}
-                        </ul>
+                        <GenreList genres={genres}/>
                     </div>
                 </div>
             )}
@@ -63,4 +52,4 @@ const GenresDropdown = ({genres, isMobile = false,}: Props) => {
     )
 }
 
-export default GenresDropdown
+export default GenresDropdown;
