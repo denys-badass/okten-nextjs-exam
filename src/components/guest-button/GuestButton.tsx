@@ -8,7 +8,7 @@ export const GuestButton = () => {
 
     return (
         <>
-            <button className={styles.button} onClick={() => loginGuest()}>
+            <button className={styles.button} onClick={loginGuest}>
                 Continue as Guest
             </button>
         </>
