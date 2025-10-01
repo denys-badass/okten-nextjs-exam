@@ -12,6 +12,9 @@ const inter = Inter({subsets: ['latin']})
 export const metadata: Metadata = {
     title: 'MovieHub - Discover Your Next Favorite Film',
     description: 'Explore thousands of movies, browse by genres, and find detailed information about your favorite films.',
+    icons : {
+        icon: '/icon'
+    }
 }
 
 export default function RootLayout({children,}: { children: ReactNode }) {
