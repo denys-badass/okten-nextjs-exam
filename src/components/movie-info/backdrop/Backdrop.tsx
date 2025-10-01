@@ -10,7 +10,7 @@ type Props = {
 export const Backdrop = ({url, title}: Props) => {
     return (
         <div className={styles.container}>
-            {url ? <Image src={url} alt={title} fill className="object-cover" priority/> : <PosterPlaceholder type='backdrop' title={title}/>}
+            {url ? <Image src={url} alt={title} fill className="object-cover" priority/> : <PosterPlaceholder type="backdrop" title={title}/>}
             <div className={styles.topOverlay}/>
             <div className={styles.rightOverlay} />
         </div>

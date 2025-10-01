@@ -1,7 +1,7 @@
 'use client'
 
-import { useState } from 'react'
-import { Menu, X,} from 'lucide-react'
+import { useState } from "react";
+import { Menu, X,} from "lucide-react";
 import {SearchBar} from "@/components/header/search-bar/SearchBar";
 import GenresDropdown from "@/components/genres-dropdown/GenresDropdown";
 import {IGenre} from "@/models/IGenre";
@@ -14,7 +14,7 @@ import {IUser} from "@/models/IUser";
 type Props = {
     genres: IGenre[];
     user: IUser | null;
-    loginType: 'guest' | 'user' | null;
+    loginType: "guest" | "user" | null;
 }
 
 const MobileMenu = ({ genres, user, loginType }: Props) => {
@@ -65,7 +65,7 @@ const MobileMenu = ({ genres, user, loginType }: Props) => {
                 </div>
             )}
         </>
-    )
+    );
 }
 
 export default MobileMenu;

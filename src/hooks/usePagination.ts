@@ -7,7 +7,7 @@ export const usePagination = () => {
 
     const handlePageChange = (page: number) => {
         const params = new URLSearchParams(sp);
-        params.set('page', page.toString());
+        params.set("page", page.toString());
         router.push(`${pathname}?${params.toString()}`);
     }
 

@@ -7,7 +7,7 @@ type Props = {
 
 export const GenreLink = ({genre}: Props) => {
     return (
-        <Link href={ {pathname: '/movies', query: {with_genres: genre.id}} } >
+        <Link href={ {pathname: "/movies", query: {with_genres: genre.id}} } >
             { genre.name }
         </Link>
     );

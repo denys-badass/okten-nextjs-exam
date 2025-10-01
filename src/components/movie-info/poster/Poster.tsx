@@ -25,7 +25,7 @@ export const Poster = ({url, title}: Props) => {
                                 </div>
                             </div>
                         </div>
-                    </Link> : <PosterPlaceholder type='poster' title={title}/>
+                    </Link> : <PosterPlaceholder type="poster" title={title}/>
                 }
             </div>
         </div>

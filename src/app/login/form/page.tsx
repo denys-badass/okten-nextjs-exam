@@ -8,7 +8,7 @@ export default async function LoginPage() {
             <div className={styles.wrapper}>
                 <div className={styles.container}>
                     <div className={styles.header}>
-                        <MovieHubLogo className={'welcome'} />
+                        <MovieHubLogo className={"welcome"} />
                         <h2 className={styles.heading}>
                             Sign in to continue to MovieHub
                         </h2>
@@ -17,8 +17,7 @@ export default async function LoginPage() {
                     <div className={styles.formBlock}>
                         <LoginForm />
                     </div>
-
                 </div>
             </div>
-    )
+    );
 }

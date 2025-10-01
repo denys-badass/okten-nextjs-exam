@@ -4,7 +4,7 @@ import {IUser} from "@/models/IUser";
 
 export const getUser = async () : Promise<IUser | null> => {
     const cookiesStore = await cookies();
-    const userId = cookiesStore.get('userId')?.value;
+    const userId = cookiesStore.get("userId")?.value;
     if (!userId) return null;
 
     return await userService.getUserById(Number(userId));

@@ -1,12 +1,12 @@
-import Image from 'next/image'
-import Link from 'next/link'
+import Image from "next/image";
+import Link from "next/link";
 import {IMovie} from "@/models/IMovie";
 import {getYear} from "@/utils/getYear";
 import {fiveStarRating} from "@/utils/fiveStarRating";
 import {getPosterUrl} from "@/utils/getPosterUrl";
-import styles from "./MovieCard.module.css"
 import {StarRating} from "@/components/star-rating/StarRating";
 import {PosterPlaceholder} from "@/components/poster-placeholder/PosterPlaceholder";
+import styles from "./MovieCard.module.css"
 
 type Props = {
     movie: IMovie;
@@ -17,7 +17,7 @@ const MovieCard = ({movie, priority = false}: Props) => {
     const {poster_path, title, release_date, vote_average, id} = movie;
     const year = getYear(release_date);
     const rating = fiveStarRating(vote_average);
-    const posterUrl = getPosterUrl(poster_path, 'w500');
+    const posterUrl = getPosterUrl(poster_path, "w500");
 
     return (
 
@@ -32,7 +32,7 @@ const MovieCard = ({movie, priority = false}: Props) => {
                             sizes="(max-width: 640px) 80vw, (max-width: 1024px) 60vw, (max-width: 1280px) 60vw, (max-width: 1536px) 40vw, 20vw"
                             className={styles.poster}
                             priority={priority}
-                        /> : <PosterPlaceholder type='backdrop' title={title}/>}
+                        /> : <PosterPlaceholder type="poster" title={title}/>}
 
                         <div className={styles.gradient}/>
                     </div>
@@ -54,7 +54,7 @@ const MovieCard = ({movie, priority = false}: Props) => {
             </Link>
         </article>
 
-    )
+    );
 }
 
-export default MovieCard
+export default MovieCard;

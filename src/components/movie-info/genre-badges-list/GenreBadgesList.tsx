@@ -16,4 +16,4 @@ export const GenreBadgesList = ({genres} : Props) => {
             ))}
         </div>
     );
-};
+}

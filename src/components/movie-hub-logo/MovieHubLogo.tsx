@@ -9,8 +9,8 @@ const MovieHubLogo = ( {className} :  Props) => (
     <svg
         className={clsx(
             {
-                [styles.welcome] : className === 'welcome',
-                [styles.header] : className === 'header',
+                [styles.welcome] : className === "welcome",
+                [styles.header] : className === "header",
             },
         )}
         viewBox="0 0 200 60"

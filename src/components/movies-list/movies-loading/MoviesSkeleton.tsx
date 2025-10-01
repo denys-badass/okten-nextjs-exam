@@ -29,4 +29,4 @@ export const MoviesSkeleton = () => {
             </div>
         </div>
     );
-};
+}

@@ -2,7 +2,7 @@ import type {Metadata} from "next";
 import {Inter} from "next/font/google"
 import {ReactNode} from "react";
 import Header from "@/components/header/Header";
-import {HeroProvider} from "@/providers/hero-provider";
+import {HeroProvider} from "@/providers/HeroProvider";
 import "./globals.css"
 import styles from "./layout.module.css"
 
@@ -12,7 +12,9 @@ export const metadata: Metadata = {
     title: "MovieHub - Discover Your Next Favorite Film",
     description: "Explore thousands of movies, browse by genres, and find detailed information about your favorite films.",
     icons : {
-        icon: "/icon"
+        icon: [
+            { url: "/icon.svg", type: "image/svg+xml" },
+        ]
     }
 }
 
@@ -30,5 +32,5 @@ export default function RootLayout({children,}: { children: ReactNode }) {
         </HeroProvider>
         </body>
         </html>
-    )
+    );
 }

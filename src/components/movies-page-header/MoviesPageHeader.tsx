@@ -30,7 +30,7 @@ const MoviesPageHeader = ({title, currentPage}: Props) => {
                 </div>
             )}
         </div>
-    )
+    );
 }
 
 export default MoviesPageHeader;

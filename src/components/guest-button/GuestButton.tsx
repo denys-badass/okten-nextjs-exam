@@ -1,7 +1,7 @@
 'use client'
 
-import styles from "./GuestButton.module.css";
 import {useLogin} from "@/hooks/useLogin";
+import styles from "./GuestButton.module.css";
 
 export const GuestButton = () => {
     const {loginGuest} = useLogin();
@@ -14,4 +14,4 @@ export const GuestButton = () => {
         </>
 
     );
-};
+}

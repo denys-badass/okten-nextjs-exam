@@ -16,9 +16,9 @@ type Props = {
 
 export const MovieInfo = async ({movie}: Props) => {
     const {backdrop_path, title, original_title, release_date, vote_count, vote_average, genre_ids, poster_path, overview} = movie;
-    const backdropUrl = getPosterUrl(backdrop_path, 'original');
+    const backdropUrl = getPosterUrl(backdrop_path, "original");
     const year = getYear(release_date);
-    const posterUrl = getPosterUrl(poster_path, 'original');
+    const posterUrl = getPosterUrl(poster_path, "original");
     const rating = fiveStarRating(vote_average);
     const genres = await getGenresArrayByIds(genre_ids);
 

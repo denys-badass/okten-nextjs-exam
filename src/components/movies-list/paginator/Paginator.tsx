@@ -14,10 +14,10 @@ export const Paginator = ({currentPage, totalPages}: Props) => {
 
     return (
         <Pagination
-            color='warning'
+            color="warning"
             showControls
             showShadow
-            radius='md'
+            radius="md"
             page={currentPage}
             total={totalPages}
             classNames={{

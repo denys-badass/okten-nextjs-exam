@@ -15,7 +15,7 @@ type LoginFormProps = {
 
 const LoginForm = () => {
     const {handleSubmit, register, formState: {errors, isValid}} = useForm<LoginFormProps>({
-        mode: 'onChange',
+        mode: "onChange",
         resolver: joiResolver(loginValidator)
     });
     const {loginHandler} = useLogin();
@@ -31,7 +31,7 @@ const LoginForm = () => {
                     }}
                     isInvalid={!!errors.username}
                     errorMessage={errors.username?.message}
-                    {...register('username')}
+                    {...register("username")}
                 />
                 <Input
                     label="Password"
@@ -42,14 +42,14 @@ const LoginForm = () => {
                     }}
                     isInvalid={!!errors.password}
                     errorMessage={errors.password?.message}
-                    {...register('password')}
+                    {...register("password")}
                 />
-                <Button size="lg" type="submit" className={styles.button}>
+                <Button size="lg" type="submit" className={styles.button} disabled={!isValid}>
                     Sign In to MovieHub
                 </Button>
             </form>
         </div>
-    )
+    );
 }
 
 export default LoginForm;

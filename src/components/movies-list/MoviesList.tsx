@@ -40,7 +40,7 @@ const MoviesList = async ({
                     }
                 </p>
             </div>
-        )
+        );
     }
 
     const {results, page, total_pages} = data;
@@ -61,7 +61,7 @@ const MoviesList = async ({
             <Paginator currentPage={page} totalPages={totalPages}/>
         </div>
 
-    )
+    );
 }
 
 export default MoviesList;

@@ -17,7 +17,7 @@ export default async function MoviesPage({ searchParams }: Props) {
     const page = Number(sp.page) || 1;
     const genre = await movieService.getGenresById(Number(genreId));
 
-    const title = genreId ? `${genre.name}'s movies` : 'Movies';
+    const title = genreId ? `${genre.name}'s movies` : "Movies";
 
     return (
             <div className={styles.container}>
@@ -29,10 +29,10 @@ export default async function MoviesPage({ searchParams }: Props) {
 
                 <div className={styles.moviesWrapper}>
                     <Suspense fallback={<MoviesSkeleton />}>
-                        <MoviesList params={sp} endpoint='discover/movie'/>
+                        <MoviesList params={sp} endpoint="discover/movie"/>
                     </Suspense>
                 </div>
             </div>
 
-    )
+    );
 }

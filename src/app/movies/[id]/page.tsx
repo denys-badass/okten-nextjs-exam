@@ -1,8 +1,8 @@
 import {SearchParams} from "next/dist/server/request/search-params";
 import {IMovie} from "@/models/IMovie";
 import {BackButton} from "@/components/back-button/BackButton";
-import styles from "./page.module.css"
 import {MovieInfo} from "@/components/movie-info/MovieInfo";
+import styles from "./page.module.css"
 
 type Props = {
     searchParams: Promise<SearchParams>

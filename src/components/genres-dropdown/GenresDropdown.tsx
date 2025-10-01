@@ -3,10 +3,9 @@
 import {ChevronDown} from "lucide-react"
 import {IGenre} from "@/models/IGenre";
 import clsx from "clsx";
-import {GenreLink} from "@/components/genre-link/GenreLink";
 import {useGenresDropdown} from "@/hooks/useGenresDropdown";
-import styles from "./GenresDropdown.module.css"
 import {GenreList} from "@/components/genres-dropdown/genre-list/GenreList";
+import styles from "./GenresDropdown.module.css"
 
 type Props = {
     genres: IGenre[];

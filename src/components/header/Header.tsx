@@ -48,7 +48,7 @@ const Header = async () => {
                 </div>
             </div>
         </header>
-    )
+    );
 }
 
 export default Header;

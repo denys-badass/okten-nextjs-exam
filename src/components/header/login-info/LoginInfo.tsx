@@ -4,7 +4,7 @@ import {UserInfo} from "@/components/header/login-info/user/UserInfo";
 
 type Props = {
     user: IUser | null;
-    loginType: 'guest' | 'user' | null;
+    loginType: "guest" | "user" | null;
 }
 
 export const LoginInfo = ({user, loginType}: Props) => {
@@ -14,7 +14,7 @@ export const LoginInfo = ({user, loginType}: Props) => {
 
     return (
         <div>
-            <Link href={'/login'}>{loginType === 'guest' ? 'Guest' : 'LogIn'}</Link>
+            <Link href={"/login"}>{loginType === "guest" ? "Guest" : "LogIn"}</Link>
         </div>
     );
-};
+}

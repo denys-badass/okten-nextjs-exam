@@ -20,4 +20,4 @@ export const GenreList = ({genres} : Props) => {
             ))}
         </ul>
     );
-};
+}

@@ -1,12 +1,12 @@
 import styles from "./PosterPlaceholder.module.css";
 
 type Props = {
-    type: 'poster' | 'backdrop';
+    type: "poster" | "backdrop";
     title: string;
 }
 
 export const PosterPlaceholder = ({type, title}: Props) => {
-    const isPoster = type === 'poster';
+    const isPoster = type === "poster";
     return (
         <svg
             viewBox={isPoster ? "0 0 300 450" : "0 0 780 439"}
@@ -165,4 +165,4 @@ export const PosterPlaceholder = ({type, title}: Props) => {
             />
         </svg>
     );
-};
+}

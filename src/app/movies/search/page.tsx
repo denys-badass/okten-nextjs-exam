@@ -20,9 +20,9 @@ export default async function SearchPage({ searchParams }: Props) {
 
             />
             <div className={styles.moviesWrapper}>
-                <MoviesList params={sp} endpoint='search/movie' isSearch/>
+                <MoviesList params={sp} endpoint="search/movie" isSearch/>
             </div>
         </div>
 
-    )
+    );
 }

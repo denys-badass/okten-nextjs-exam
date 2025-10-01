@@ -1,21 +1,20 @@
 'use client'
 
 import {Select, SelectItem} from "@heroui/select";
-import styles from "./SortBar.module.css"
-import {useMovieSearch} from "@/hooks/useMovieSearch";
 import {useMovieSort} from "@/hooks/useMovieSort";
+import styles from "./SortBar.module.css"
 
 const sortOptions = [
-    {key: 'popularity.desc', label: 'Popularity ↓'},
-    {key: 'popularity.asc', label: 'Popularity ↑'},
-    {key: 'title.desc', label: 'Title ↓'},
-    {key: 'title.asc', label: 'Title ↑'},
-    {key: 'primary_release_date.desc', label: 'Release Date ↓'},
-    {key: 'primary_release_date.asc', label: 'Release Date ↑'},
-    {key: 'vote_average.desc', label: 'Rating ↓'},
-    {key: 'vote_average.asc', label: 'Rating ↑'},
-    {key: 'vote_count.desc', label: 'Reviews ↓'},
-    {key: 'vote_count.asc', label: 'Reviews ↑'},
+    {key: "popularity.desc", label: "Popularity ↓"},
+    {key: "popularity.asc", label: "Popularity ↑"},
+    {key: "title.desc", label: "Title ↓"},
+    {key: "title.asc", label: "Title ↑"},
+    {key: "primary_release_date.desc", label: "Release Date ↓"},
+    {key: "primary_release_date.asc", label: "Release Date ↑"},
+    {key: "vote_average.desc", label: "Rating ↓"},
+    {key: "vote_average.asc", label: "Rating ↑"},
+    {key: "vote_count.desc", label: "Reviews ↓"},
+    {key: "vote_count.asc", label: "Reviews ↑"},
 ]
 
 const SortBar = () => {
@@ -44,7 +43,7 @@ const SortBar = () => {
                 </SelectItem>
             ))}
         </Select>
-    )
+    );
 }
 
-export default SortBar
+export default SortBar;

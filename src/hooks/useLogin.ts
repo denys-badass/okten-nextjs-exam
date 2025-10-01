@@ -9,13 +9,13 @@ export const useLogin = () => {
         const {username, password} = data;
         try {
             await loginUserAction(username, password)
-            router.push('/movies');
+            router.push("/movies");
         } catch (e) {
-            console.error(e instanceof Error ? e.message : 'Unknown error');
+            console.error(e instanceof Error ? e.message : "Unknown error");
             addToast({
-                title: 'Failed to log in. Wrong username or password.',
-                description: 'Please try again.',
-                color: 'danger',
+                title: "Failed to log in. Wrong username or password.",
+                description: "Please try again.",
+                color: "danger",
             })
             return e;
         }
@@ -24,12 +24,12 @@ export const useLogin = () => {
     const loginGuest = async () => {
         await loginGuestAction();
 
-        router.push('/movies');
+        router.push("/movies");
     }
 
     const logoutHandler = async () => {
         await logoutUserAction();
-        router.push('/login');
+        router.push("/login");
     }
 
     return {
