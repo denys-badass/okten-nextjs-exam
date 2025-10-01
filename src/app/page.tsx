@@ -24,7 +24,7 @@ export default function HomePage() {
 
                 <div className={styles.buttonGroup}>
                     <Link href='/login'>
-                        <Button size="lg" className={styles.loginButton}>
+                        <Button fullWidth size="lg" className={styles.loginButton}>
                             Log In
                         </Button>
                     </Link>
