@@ -2,7 +2,7 @@
 
 import {cookies} from "next/headers";
 import {userService} from "@/api/user.service";
-import {revalidatePath} from "next/cache";
+import {redirect} from "next/navigation";
 
 export async function loginUserAction( username: string, password: string) {
     const cookieStore = await cookies();
@@ -11,14 +11,14 @@ export async function loginUserAction( username: string, password: string) {
 
     cookieStore.set("loginType", "user", {httpOnly: true, maxAge: 60 * 60, path: "/"});
     cookieStore.set("userId", JSON.stringify(user.id), {httpOnly: true, maxAge: 60 * 60, path: "/"});
-    revalidatePath("/movies");
+    redirect("/movies");
 }
 
 export async function logoutUserAction() {
     const cookieStore = await cookies()
     cookieStore.delete("userId")
     cookieStore.delete("loginType")
-    revalidatePath("/login");
+    redirect("/login");
 }
 
 export async function loginGuestAction() {
@@ -26,5 +26,5 @@ export async function loginGuestAction() {
 
     cookieStore.set("userId", "", { httpOnly: true, maxAge: 0, path: "/" })
     cookieStore.set("loginType", "guest", {httpOnly: true, maxAge: 60 * 60, path: "/", secure: process.env.NODE_ENV === "production",})
-    revalidatePath("/movies");
+    redirect("/movies");
 }
