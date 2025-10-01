@@ -1,6 +1,5 @@
 import {SearchParams} from "next/dist/server/request/search-params";
 import MoviesPageHeader from "@/components/movies-page-header/MoviesPageHeader";
-import SortBar from "@/components/sort-bar/SortBar";
 import MoviesList from "@/components/movies-list/MoviesList";
 import styles from "./page.module.css"
 
