@@ -1,0 +1,200 @@
+.container {
+    width: 100%;
+    position: relative;
+    height: 420px;
+    background-color: var(--color-slate-50, #f8fafc);
+    border: 1px solid var(--color-slate-200, #e2e8f0);
+    border-radius: 1rem;
+    overflow: hidden;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -2px rgba(0, 0, 0, 0.1);
+    transition: transform 500ms ease-in-out;
+    cursor: pointer;
+    transform: translateZ(0);
+    display: flex;
+    flex-direction: column;
+}
+
+.container:hover {
+    transform: translateY(-0.5rem) scale(1.02);
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+}
+
+.posterContainer {
+    position: relative;
+    height: 280px;
+    overflow: hidden;
+    flex-shrink: 0;
+}
+
+.poster {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 700ms ease-in-out;
+}
+
+.gradient {
+    position: absolute;
+    inset: 0;
+    background-image: linear-gradient(to top, rgba(0, 0, 0, 0.6), transparent, transparent);
+    opacity: 0;
+    transition: opacity 300ms ease-in-out;
+}
+
+.cardContainer {
+    padding: 1rem;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.cardWrapper > :not(:last-child) {
+    --tw-space-y-reverse: 0;
+    margin-block-end: 0.5rem;
+}
+
+.cardContainer > :not(:last-child) {
+    --tw-space-y-reverse: 0;
+    margin-block-end: 0.75rem;
+}
+
+.title {
+    font-weight: 700;
+    color: var(--color-slate-900, #0f172a);
+}
+
+.year {
+    display: flex;
+    align-items: center;
+    color: var(--color-slate-500, #64748b);
+    font-size: 0.875rem;
+}
+
+.yearContainer > :not(:last-child) {
+    --tw-space-x-reverse: 0;
+    margin-inline-end: 0.25rem;
+}
+
+.rating {
+    display: flex;
+    gap: 0.5rem;
+    align-items: center;
+}
+
+.decorative {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 0.25rem;
+    background-image: linear-gradient(to right, var(--color-amber-500, #f59e0b), var(--color-red-500, #ef4444), var(--color-pink-500, #ec4899));
+    transform: scaleX(0);
+    transition: transform 300ms ease-in-out;
+    transform-origin: left;
+}
+
+.shine {
+    position: absolute;
+    inset: 0;
+    background-image: linear-gradient(to right, transparent, rgba(255, 255, 255, 0.1), transparent);
+    transform: skewX(-12deg) translateX(-100%);
+    transition: transform 1000ms ease-in-out;
+}
+
+.group:hover .poster {
+    transform: scale(1.1);
+}
+
+.group:hover .gradient {
+    opacity: 1;
+}
+
+.group:hover .title {
+    color: var(--color-amber-600, #d97706);
+}
+
+.group:hover .decorative {
+    transform: scaleX(1);
+}
+
+.group:hover .shine {
+    transform: translateX(100%);
+}
+
+@media (min-width: 640px) {
+    .container {
+        height: 450px;
+    }
+
+    .posterContainer {
+        height: 300px;
+    }
+
+    .cardContainer {
+        padding: 1.25rem;
+    }
+
+    .cardContainer > :not(:last-child) {
+        --tw-space-y-reverse: 0;
+        margin-block-end: 1rem;
+    }
+
+    .title {
+        font-size: 1.125rem;
+        line-height: 1.5rem;
+    }
+}
+
+@media (min-width: 1024px) {
+    .container {
+        height: 480px;
+
+    }
+
+    .posterContainer {
+        height: 320px;
+    }
+
+    .title {
+        font-size: 1.125rem;
+        line-height: 1.5rem;
+    }
+}
+
+@media (min-width: 1280px) {
+    .container {
+        height: 500px;
+    }
+
+    .posterContainer {
+        height: 340px;
+    }
+}
+
+@media (min-width: 1536px) {
+    .container {
+        height: 520px;
+    }
+
+    .posterContainer {
+        height: 360px;
+    }
+}
+
+:global(.dark) .container {
+    background-color: var(--color-slate-800, #1e293b);
+    border: 1px solid var(--color-slate-700, #334155);
+}
+
+:global(.dark) .title {
+    color: var(--color-slate-100, #f1f5f9);
+}
+
+:global(.dark) .year {
+    color: var(--color-slate-400, #94a3b8);
+}
+
+:global(.dark) .group:hover .title {
+    color: var(--color-amber-400, #fbbf24);
+}

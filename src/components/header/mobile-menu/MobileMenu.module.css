@@ -1,0 +1,105 @@
+.hamburger {
+    padding: 0.5rem;
+    border-radius: 0.5rem;
+    background-color: var(--color-slate-100, #f1f5f9);
+    cursor: pointer;
+    color: var(--color-slate-600, #475569);
+}
+
+.hamburger:hover {
+    background-color: var(--color-slate-200, #e2e8f0);
+}
+
+.menuIcon {
+    width: 1.25rem;
+    height: 1.25rem;
+}
+
+.menuWrapper {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background-color: var(--color-slate-50, #f8fafc);
+    border-top: 1px solid var(--color-slate-200, #e2e8f0);
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -4px rgba(0, 0, 0, 0.1);
+    z-index: 50;
+}
+
+.menuContainer {
+    padding-inline: 0.5rem;
+    padding-top: 0.5rem;
+    padding-bottom: 0.75rem;
+}
+
+.menuContainer > :not(:last-child) {
+    --tw-space-y-reverse: 0;
+    margin-block-end: 0.25rem;
+}
+
+.searchBar {
+    padding-inline: 0.75rem;
+    padding-block: 0.5rem;
+}
+
+.navLink {
+    display: block;
+    padding: 0.75rem;
+    color: var(--color-slate-700, #334155);
+    transition: all 200ms ease-in-out;
+    border-radius: 0.5rem;
+}
+
+.genres {
+    padding: 0.75rem;
+}
+
+.navLink:hover {
+    color: var(--color-amber-600, #d97706);
+}
+
+.userDivider {
+    padding: 0.75rem;
+    border-top: 1px solid var(--color-slate-200, #e2e8f0);
+    margin-top: 0.5rem;
+}
+
+.userContainer {
+    color: var(--color-slate-600, #475569);
+}
+
+@media (min-width: 768px) {
+    .menuWrapper {
+        display: none;
+    }
+}
+
+:global(.dark) .hamburger {
+    background-color: var(--color-slate-800, #1e293b);
+    color: var(--color-slate-300, #cbd5e1);
+}
+
+:global(.dark) .hamburger:hover {
+    background-color: var(--color-slate-700, #334155);
+}
+
+:global(.dark) .menuWrapper {
+    background-color: var(--color-slate-900, #0f172a);
+    border-top: 1px solid var(--color-slate-700, #334155);
+}
+
+:global(.dark) .navLink {
+    color: var(--color-slate-200, #e2e8f0);
+}
+
+:global(.dark) .navLink:hover {
+    color: var(--color-amber-400, #fbbf24);
+}
+
+:global(.dark) .userDivider {
+    border-top: 1px solid var(--color-slate-700, #334155);
+}
+
+:global(.dark) .userContainer {
+    color: var(--color-slate-300, #cbd5e1);
+}

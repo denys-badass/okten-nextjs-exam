@@ -1,0 +1,49 @@
+.welcome {
+    height: 4rem;
+    width: auto;
+    margin: 0 auto;
+}
+
+.header {
+    height: 2rem;
+    width: auto;
+}
+
+.from {
+    color: var(--color-amber-400, #fbbf24);
+}
+
+.circleFrom {
+    fill: var(--color-amber-400, #fbbf24);
+}
+
+.to {
+    color: var(--color-red-500, #ef4444);
+}
+
+.circleTo {
+    fill: var(--color-red-500, #ef4444);
+}
+
+@media (min-width: 640px) {
+    .welcome {
+        height: 5rem;
+    }
+}
+
+:global(.dark) .from {
+    color: var(--color-amber-300, #fcd34d);
+}
+
+:global(.dark) .circleFrom {
+    fill: var(--color-amber-300, #fcd34d);
+}
+
+:global(.dark) .to {
+    color: var(--color-red-400, #f87171);
+}
+
+:global(.dark) .circleTo {
+    fill: var(--color-red-400, #f87171);
+}
+

@@ -1,0 +1,115 @@
+.header {
+    position: sticky;
+    top: 0;
+    z-index: 50;
+    backdrop-filter: blur(12px);
+    background-color: rgba(255, 255, 255, 0.9);
+    border-bottom: 1px solid var(--color-slate-200, #e2e8f0);
+    box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px -1px rgba(0, 0, 0, 0.1);
+}
+
+.wrapper {
+    max-width: 80rem;
+    margin-inline: auto;
+    padding-inline: 1rem;
+}
+
+.container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 4rem;
+}
+
+.logo {
+    flex-shrink: 0;
+}
+
+.nav {
+    display: none;
+    align-items: center;
+}
+
+.nav > :not(:last-child) {
+    --tw-space-x-reverse: 0;
+    margin-inline-end: 2rem;
+}
+
+.navLink {
+    color: var(--color-slate-700, #334155);
+    font-weight: 500;
+}
+
+.navLink:hover {
+    color: var(--color-amber-600, #d97706);
+}
+
+.searchBarContainer {
+    display: none;
+    flex: 1;
+    max-width: 32rem;
+    margin-inline: 2rem;
+}
+
+.desktopRightContainer {
+    display: none;
+    align-items: center;
+}
+
+.desktopRightContainer > :not(:last-child) {
+    --tw-space-x-reverse: 0;
+    margin-inline-end: 1rem;
+}
+
+.mobileRightContainer {
+    display: flex;
+    align-items: center;
+}
+
+.mobileRightContainer > :not(:last-child) {
+    --tw-space-x-reverse: 0;
+    margin-inline-end: 0.5rem;
+}
+
+@media (min-width: 640px) {
+    .wrapper {
+        padding-inline: 1.5rem;
+    }
+}
+
+@media (min-width: 768px) {
+    .nav {
+        display: flex;
+    }
+
+    .searchBarContainer {
+        display: block;
+    }
+
+    .desktopRightContainer {
+        display: flex;
+    }
+
+    .mobileRightContainer {
+        display: none;
+    }
+}
+
+@media (min-width: 1024px) {
+    .wrapper {
+        padding-inline: 2rem;
+    }
+}
+
+:global(.dark) .header {
+    background-color: rgb(15, 23, 42);
+    border-bottom: 1px solid var(--color-slate-700, #334155);
+}
+
+:global(.dark) .navLink {
+    color: var(--color-slate-200, #e2e8f0);
+}
+
+:global(.dark) .navLink:hover {
+    color: var(--color-amber-400, #fbbf24);
+}
