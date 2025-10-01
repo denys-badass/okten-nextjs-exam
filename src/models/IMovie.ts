@@ -1,7 +1,7 @@
 export interface IMovie {
     backdrop_path: string;
     poster_path: string;
-    genre_ids: number[];
+    genre_ids: number[] | string[];
     id: number;
     original_title: string;
     overview: string;

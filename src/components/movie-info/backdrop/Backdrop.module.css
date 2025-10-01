@@ -1,0 +1,37 @@
+.container {
+    position: relative;
+    height: 50vh;
+    overflow: hidden;
+}
+
+.topOverlay {
+    position: absolute;
+    inset: 0;
+    background-image: linear-gradient(to top, var(--color-slate-50, #f8fafc), #f8fafc99, transparent);
+}
+
+.rightOverlay {
+    position: absolute;
+    inset: 0;
+    background-image: linear-gradient(to right, #f8fafccc, transparent, #f8fafccc);
+}
+
+@media (min-width: 640px) {
+    .container {
+        height: 60vh;
+    }
+}
+
+@media (min-width: 1024px) {
+    .container {
+        height: 90vh;
+    }
+}
+
+:global(.dark) .topOverlay {
+    background-image: linear-gradient(to top, var(--color-slate-900, #1e293b), #1e293b99, transparent);
+}
+
+:global(.dark) .rightOverlay {
+    background-image: linear-gradient(to right, #0f172acc, transparent, #0f172acc);
+}
