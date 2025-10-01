@@ -2,9 +2,23 @@ import {IGenre} from "@/models/IGenre";
 import {cache} from "react";
 import {IMovieResponse} from "@/models/IMovie";
 
-const apiBaseUrl = process.env.API_BASE_URL!;
+function validateEnv() {
+    const apiBaseUrl = process.env.API_BASE_URL;
+    const token = process.env.API_AUTH_TOKEN;
+
+    if (!apiBaseUrl) {
+        throw new Error("API_BASE_URL is not defined in environment variables");
+    }
+
+    if (!token) {
+        throw new Error("API_AUTH_TOKEN is not defined in environment variables");
+    }
+
+    return { apiBaseUrl, token };
+}
+
+const { apiBaseUrl, token } = validateEnv();
 const genresUrl = apiBaseUrl + "/genre/movie/list";
-const token = process.env.API_AUTH_TOKEN!;
 
 const headers = {
     "accept": "application/json",
