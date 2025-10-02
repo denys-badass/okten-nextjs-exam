@@ -1,8 +1,6 @@
-'use client'
-
 import {IUser} from "@/models/IUser";
 import {UserInfo} from "@/components/header/login-info/user/UserInfo";
-import {useLogin} from "@/hooks/useLogin";
+import Link from "next/link";
 
 type Props = {
     user: IUser | null;
@@ -10,15 +8,13 @@ type Props = {
 }
 
 export const LoginInfo = ({user, loginType}: Props) => {
-    const {logoutHandler} = useLogin();
-
     if (user) {
         return <UserInfo user={user}/>
     }
 
     return (
         <div>
-            <button onClick={logoutHandler}>{loginType === "guest" ? "Guest" : "LogIn"}</button>
+            <Link href="/login" >{loginType === "guest" ? "Guest" : "LogIn"}</Link>
         </div>
     );
 }
