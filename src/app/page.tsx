@@ -23,8 +23,8 @@ export default function HomePage() {
                 </section>
 
                 <div className={styles.buttonGroup}>
-                    <Link href='/login'>
-                        <Button fullWidth size="lg" className={styles.loginButton}>
+                    <Link href='/login' className={styles.linkLogin}>
+                        <Button className={styles.loginButton}>
                             Log In
                         </Button>
                     </Link>

@@ -2,15 +2,16 @@
 
 import {useLogin} from "@/hooks/useLogin";
 import styles from "./GuestButton.module.css";
+import {Button} from "@heroui/button";
 
 export const GuestButton = () => {
     const {loginGuestHandler} = useLogin();
 
     return (
         <>
-            <button className={styles.button} onClick={loginGuestHandler}>
+            <Button className={styles.button} onPress={loginGuestHandler}>
                 Continue as Guest
-            </button>
+            </Button>
         </>
 
     );
