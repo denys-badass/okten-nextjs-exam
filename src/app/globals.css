@@ -51,3 +51,7 @@ html {
 :root.dark {
     background-color: #0f172a;
 }
+
+:root {
+    background-color: #f8fafc;
+}
