@@ -1,6 +1,6 @@
 'use client'
 
-import { useState } from "react";
+import {useState} from "react";
 import { Menu, X,} from "lucide-react";
 import {SearchBar} from "@/components/header/search-bar/SearchBar";
 import GenresDropdown from "@/components/genres-dropdown/GenresDropdown";
@@ -8,8 +8,9 @@ import {IGenre} from "@/models/IGenre";
 import {LoginInfo} from "@/components/header/login-info/LoginInfo";
 import {Button} from "@heroui/button";
 import Link from "next/link";
-import styles from "./MobileMenu.module.css"
 import {IUser} from "@/models/IUser";
+import {useCloseOnNavigation} from "@/hooks/useCloseOnNavigation";
+import styles from "./MobileMenu.module.css"
 
 type Props = {
     genres: IGenre[];
@@ -18,7 +19,9 @@ type Props = {
 }
 
 const MobileMenu = ({ genres, user, loginType }: Props) => {
-    const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
+    const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+
+    useCloseOnNavigation(isMobileMenuOpen, () => setIsMobileMenuOpen(false));
 
     const toggleMobileMenu = () => {
         setIsMobileMenuOpen(!isMobileMenuOpen)
@@ -54,7 +57,7 @@ const MobileMenu = ({ genres, user, loginType }: Props) => {
                             Movies
                         </Link>
                         <div className={styles.genmres}>
-                            <GenresDropdown genres={genres} isMobile/>
+                            <GenresDropdown genres={genres} isMobile />
                         </div>
                         <div className={styles.userDivider}>
                             <div className={styles.userContainer}>

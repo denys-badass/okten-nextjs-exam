@@ -6,14 +6,17 @@ import clsx from "clsx";
 import {useGenresDropdown} from "@/hooks/useGenresDropdown";
 import {GenreList} from "@/components/genres-dropdown/genre-list/GenreList";
 import styles from "./GenresDropdown.module.css"
+import {useCloseOnNavigation} from "@/hooks/useCloseOnNavigation";
 
 type Props = {
     genres: IGenre[];
     isMobile?: boolean;
 }
 
-const GenresDropdown = ({genres, isMobile = false,}: Props) => {
+const GenresDropdown = ({genres, isMobile = false}: Props) => {
     const {isOpen, setIsOpen, dropdownRef} = useGenresDropdown();
+
+    useCloseOnNavigation(isOpen, () => setIsOpen(false));
 
     if (isMobile) {
         return (
