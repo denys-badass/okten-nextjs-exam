@@ -50,7 +50,7 @@ export const UserInfo = ({user}: Props) => {
                                 </div>
                             </div>
                             <div>
-                                <Button variant='ghost' color='warning' fullWidth onPress={() => logoutHandler()}>Log out</Button>
+                                <Button variant='ghost' color='warning' fullWidth onPress={logoutHandler}>Log out</Button>
                             </div>
                         </CardBody>
                     </Card>
