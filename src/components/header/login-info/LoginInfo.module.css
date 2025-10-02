@@ -1,0 +1,11 @@
+.button {
+    cursor: pointer;
+}
+
+.button:hover {
+    color: var(--color-amber-600, #d97706);
+}
+
+:global(.dark) .button:hover {
+    color: var(--color-amber-400, #fbbf24);
+}

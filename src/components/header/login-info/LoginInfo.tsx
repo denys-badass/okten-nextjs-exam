@@ -3,6 +3,7 @@
 import {IUser} from "@/models/IUser";
 import {UserInfo} from "@/components/header/login-info/user/UserInfo";
 import {useLogin} from "@/hooks/useLogin";
+import styles from "./LoginInfo.module.css";
 
 type Props = {
     user: IUser | null;
@@ -18,7 +19,7 @@ export const LoginInfo = ({user, loginType}: Props) => {
 
     return (
         <div>
-            <button onClick={logoutHandler}>{loginType === "guest" ? "Guest" : "LogIn"}</button>
+            <button className={styles.button} onClick={logoutHandler}>{loginType === "guest" ? "Guest" : "LogIn"}</button>
         </div>
     );
 }
