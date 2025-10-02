@@ -1,7 +1,12 @@
+'use client'
+
 import {addToast} from "@heroui/toast";
 import {loginGuestAction, loginUserAction, logoutUserAction} from "@/actions/auth";
+import {useRouter} from "next/navigation";
 
 export const useLogin = () => {
+    const router = useRouter();
+
     const loginHandler = async (data: {username: string, password: string}) => {
         const {username, password} = data;
         try {
@@ -23,6 +28,7 @@ export const useLogin = () => {
 
     const logoutHandler = async () => {
         await logoutUserAction();
+        router.push("/login");
     }
 
     return {
