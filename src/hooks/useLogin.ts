@@ -21,7 +21,7 @@ export const useLogin = () => {
         }
     }
 
-    const loginGuest = async () => {
+    const loginGuestHandler = async () => {
         await loginGuestAction();
 
         router.push("/movies");
@@ -34,7 +34,7 @@ export const useLogin = () => {
 
     return {
         loginHandler,
-        loginGuest,
+        loginGuestHandler,
         logoutHandler,
     }
 }
