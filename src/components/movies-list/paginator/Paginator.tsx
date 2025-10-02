@@ -18,6 +18,8 @@ export const Paginator = ({currentPage, totalPages}: Props) => {
             showControls
             showShadow
             radius="md"
+            size="sm"
+            isCompact
             page={currentPage}
             total={totalPages}
             classNames={{
